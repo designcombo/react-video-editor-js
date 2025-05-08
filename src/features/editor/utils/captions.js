@@ -95,6 +95,7 @@ function createCaptionLines(input, fontInfo, options) {
 }
 
 export function generateCaptions(input, fontInfo, options) {
+  console.log("generateCaptions: ", input, fontInfo, options);
   const captionLines = createCaptionLines(input, fontInfo, options);
 
   const captions = captionLines.map((line) =>
