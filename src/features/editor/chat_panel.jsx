@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 
-import { test_response } from "./test";
 import { buildProject } from "./builder";
 import {
   DESIGN_LOAD,
@@ -12,8 +11,6 @@ import {
 } from "@designcombo/state";
 import { dispatch } from "@designcombo/events";
 import { callMcp } from "../service/api";
-
-//const socket = io("http://localhost:5000");
 
 export default function ChatPanel() {
   const [messages, setMessages] = useState([]);
@@ -32,7 +29,7 @@ export default function ChatPanel() {
   }, []);
 
   const sendMessage = async () => {
-    const response = await callMcp(input);
+    const response = await callMcp(`script: ${input}`);
     const content = response.content;
     setMessages([...messages, response.messages]);
     if (response.type === "editor") {

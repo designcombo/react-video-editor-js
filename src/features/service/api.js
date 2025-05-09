@@ -1,5 +1,5 @@
 export const callMcp = async (prompt) => {
-    const url = "http://127.0.0.1:8080/openai";
+    const url = "https://pippit-poc.onrender.com/openai";
     const headers = {
       "Content-Type": "application/json",
     };
